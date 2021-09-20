@@ -33,6 +33,13 @@ function addBookToLibrary()
     displayLibrary(newBook);
 }
 
+function removeBook(e)
+{
+    const parentNode = e.parentElement;
+    // console.log(parentNode);
+    parentNode.remove();
+}
+
 const booksList = document.querySelector('.booksList');
 
 function displayLibrary(book)
@@ -45,6 +52,7 @@ function displayLibrary(book)
     const deleteBttn = document.createElement('button');
 
     itemBody.classList.add('items');
+    deleteBttn.setAttribute('onclick', 'removeBook(this)');
 
     titlePara.textContent = `Title: ${book.title}`;
     authorPara.textContent = `Author: ${book.author}`;
