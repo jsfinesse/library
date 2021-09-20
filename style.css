@@ -6,8 +6,27 @@ h1 {
     text-align: center;
 }
 
-.booksList {
-    display: grid;
-    grid-template-columns: repeat(5, auto);
+.addBook {
+    text-align: center;
 }
 
+.booksList {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 5rem;
+    /* grid-auto-columns: minmax(1fr, auto); */
+    /* justify-items: center; */
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* width: fit-content; */
+}
+
+label {
+    display: inline-block;
+    width: 60px;
+}
