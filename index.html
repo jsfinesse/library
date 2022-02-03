@@ -10,14 +10,17 @@
 </head>
 <body>
     <h1>Your Own Library!!!</h1>
-    <p class="addBook"><button>Add Book</button></p>
-    <div style="display: inline-block;">
+    <button class="add-book">Add Book</button>
+    <div class="modal-bg">
+    <div class="modal">
         <section><label for="title">Title: </label><input id="title" type="text"></section>
         <section><label for="author">Author: </label><input id="author" type="text"></section>
         <section><label for="pages">Pages: </label><input id="pages" type="text"></section>
         <section><label for="read">Read: </label><input id="read" type="checkbox"></section>
-        <section style="display: flex; justify-content: center; align-items: center;"><button onclick="addBookToLibrary()">Add</button> <button>Cancel</button></section>
+        <section style="display: flex; justify-content: center; align-items: center;"><button onclick="addBookToLibrary()">Add</button></section>
+        <span class="modal-close">X</span>
     </div>
+</div>
     <div class="booksList">
         <!-- <div class="items">
             <p>Title: The Theory of Everything</p>
