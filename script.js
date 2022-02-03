@@ -25,6 +25,11 @@ function addBookToLibrary() {
     const isRead = document.getElementById("read").checked;
     // console.log(title, author, pages, isRead);
 
+    if(title.lenght < 2 || author.lenght < 2 || pages < 1) {
+        alert("Please enter valid data");
+        return;
+    }
+    
     if (myLibrary.some((item) => item.title === title)) {
         alert("This book already exists in your library");
         return;

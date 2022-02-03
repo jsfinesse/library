@@ -1,9 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 body {
-    font-family: sans-serif;
+    font-family: "Poppins", sans-serif;
+    background-color: #2f363e;
+    color: snow;
 }
 
 h1 {
     text-align: center;
+    color: teal;
+}
+
+button {
+    text-decoration: none;
+    padding: 20px 50px;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+    color: snow;
+    background-color: teal;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0 0);
 }
 
 .modal-bg {
@@ -28,7 +49,7 @@ h1 {
 
 .modal {
     position: relative;
-    background-color: white;
+    background-color: #263a52;
     width: 30%;
     height: 30%;
     display: flex;
@@ -45,14 +66,18 @@ h1 {
     cursor: pointer;
 }
 
-.addBook {
-    text-align: center;
+.add-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
 }
 
 .booksList {
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-gap: 5rem;
+    /* margin-left: 50px */
     /* grid-auto-columns: minmax(1fr, auto); */
     /* justify-items: center; */
 }
@@ -62,7 +87,8 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* width: fit-content; */
+    box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25);
+    /* width: calc(100% / 3); */
 }
 
 label {
