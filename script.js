@@ -25,7 +25,8 @@ function addBookToLibrary() {
     const isRead = document.getElementById("read").checked;
     // console.log(title, author, pages, isRead);
 
-    if(title.lenght < 2 || author.lenght < 2 || pages < 1) {
+    const isValid = validate(title, author, pages);
+    if(!isValid) {
         alert("Please enter valid data");
         return;
     }
@@ -39,6 +40,12 @@ function addBookToLibrary() {
     myLibrary.push(newBook);
     // console.log(myLibrary);
     displayLibrary(newBook);
+}
+
+function validate(title, author, pages) {
+    if(title.lenght < 2 || author.lenght < 2 || pages < 1) {
+        return false;
+    }
 }
 
 function removeBook(e) {
