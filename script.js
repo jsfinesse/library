@@ -26,11 +26,11 @@ function addBookToLibrary() {
     // console.log(title, author, pages, isRead);
 
     const isValid = validate(title, author, pages);
-    if(!isValid) {
+    if (!isValid) {
         alert("Please enter valid data");
         return;
     }
-    
+
     if (myLibrary.some((item) => item.title === title)) {
         alert("This book already exists in your library");
         return;
@@ -38,15 +38,31 @@ function addBookToLibrary() {
 
     const newBook = new book(title, author, pages, isRead);
     myLibrary.push(newBook);
-    // console.log(myLibrary);
+
+    // Reset Form
+    reset();
+
+    // Display updated library
     displayLibrary(newBook);
 }
 
 function validate(title, author, pages) {
-    if(title.lenght < 2 || author.lenght < 2 || pages < 1) {
+    if (title.lenght < 2 || author.lenght < 2 || pages < 1) {
         return false;
     }
     return true;
+}
+
+function reset() {
+    const title = document.getElementById("title");
+    const author = document.getElementById("author");
+    const pages = document.getElementById("pages");
+    const isRead = document.getElementById("read");
+
+    title.value = "";
+    author.value = "";
+    pages.value = "";
+    isRead.checked = false;
 }
 
 function removeBook(e) {
@@ -92,6 +108,14 @@ addBook.addEventListener("click", () => {
 const modalClose = document.querySelector(".modal-close");
 
 modalClose.addEventListener("click", () => {
+    modalBg.classList.remove("modal-active");
+});
+
+modalBg.addEventListener("click", (event) => {
+    // console.log(event.target.id);
+    if (event.target.id !== "modal-bg") {
+        return;
+    }
     modalBg.classList.remove("modal-active");
 });
 
