@@ -46,6 +46,7 @@ function validate(title, author, pages) {
     if(title.lenght < 2 || author.lenght < 2 || pages < 1) {
         return false;
     }
+    return true;
 }
 
 function removeBook(e) {
